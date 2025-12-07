@@ -96,7 +96,8 @@ function Sidebar() {
   ];
 
   return (
-    <aside className="hidden sm:flex flex-col items-center gap-6 w-20 py-6 fixed left-0 top-16 h-[calc(100vh-64px)]">
+    <aside className="hidden sm:flex flex-col items-center gap-6 w-20 py-6 fixed left-0 top-16 h-[calc(100vh-64px)] z-40">
+
       {icons.map((it, idx) => (
         <button
           key={idx}
@@ -113,19 +114,19 @@ function Sidebar() {
 /* ------------------ Hero ------------------ */
 function Hero() {
   return (
-    <section className="relative h-[60vh] md:h-[72vh] w-full">
+<section className="relative z-0 h-[40vh] md:h-[55vh] w-full">
       {/* Background image */}
-      <div className="absolute inset-0 -z-10">
-        <Image src="/thumbnail.png" alt="hero" fill priority style={{ objectFit: 'cover' }} />
-        {/* Gradient overlay to create vignette effect */}
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/95" />
-      </div>
+       <div className="absolute inset-0 -z-10 scale-110 translate-x-55">
+  <Image src="/thumbnail2.jpg" alt="hero" fill priority style={{ objectFit: 'contain' }} />
+  <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/65" />
+</div>
+
 
       <div className="max-w-[1400px] mx-auto px-6 h-full flex items-end">
         <div className="pb-12 md:pb-20 w-full md:w-1/2">
           {/* Title image or text */}
           <div className="mb-4">
-            <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight">MONEY HEIST — PART 4</h1>
+            <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight">MONEY HEIST - PART 4</h1>
           </div>
 
           {/* meta + buttons */}
