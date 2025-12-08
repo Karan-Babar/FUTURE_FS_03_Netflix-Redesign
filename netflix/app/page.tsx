@@ -3,6 +3,8 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 import { FiSearch, FiHome, FiFilm, FiTv, FiDownload, FiList, FiUser } from 'react-icons/fi';
+import Link from "next/link";
+
 
 // Helper to split an array into chunks of given size
 function chunkArray<T>(arr: T[], size: number): T[][] {
@@ -66,10 +68,10 @@ function Navbar() {
           </div>
 
           <nav className="hidden md:flex items-center gap-6 ml-10 text-20 text-white/90 cursor-pointer">
-            <a className="hover:text-white transition">Home</a>
-            <a className="hover:text-white transition">Movies</a>
-            <a className="hover:text-white transition">TV Shows</a>
-            <a className="hover:text-white transition">Plans</a>
+           <Link href="/" className="hover:text-white transition">Home</Link>
+  <Link href="/movies" className="hover:text-white transition">Movies</Link>
+  <Link href="/tv" className="hover:text-white transition">TV Shows</Link>
+  <Link href="/plans" className="hover:text-white transition">Plans</Link>
           </nav>
         </div>
 
@@ -106,18 +108,30 @@ function Sidebar() {
   ];
 
   return (
-    <aside className="hidden sm:flex flex-col items-center gap-8 w-20 py-6 fixed left-0 top-16 h-[calc(100vh-64px)] z-40">
+    <aside className="hidden sm:flex flex-col items-center gap-6 w-20 py-6 fixed left-0 top-16 h-[calc(100vh-64px)] z-40">
 
-      {icons.map((it, idx) => (
-        <button
-          key={idx}
-          className="flex flex-col items-center text-white/90 hover:text-white transition cursor-pointer"
-          title={it.label}
-        >
-          <div className="text-2xl">{it.icon}</div>
-        </button>
-      ))}
-    </aside>
+  <Link href="/" className="flex flex-col items-center text-white/80 hover:text-white transition cursor-pointer">
+    <FiHome className="text-2xl" />
+  </Link>
+
+  <Link href="/movies" className="flex flex-col items-center text-white/80 hover:text-white transition cursor-pointer">
+    <FiFilm className="text-2xl" />
+  </Link>
+
+  <Link href="/tv" className="flex flex-col items-center text-white/80 hover:text-white transition cursor-pointer">
+    <FiTv className="text-2xl" />
+  </Link>
+
+  <Link href="/my-list" className="flex flex-col items-center text-white/80 hover:text-white transition cursor-pointer">
+    <FiList className="text-2xl" />
+  </Link>
+
+  <Link href="/download" className="flex flex-col items-center text-white/80 hover:text-white transition cursor-pointer">
+    <FiDownload className="text-2xl" />
+  </Link>
+
+</aside>
+
   );
 }
 
