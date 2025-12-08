@@ -71,9 +71,9 @@ function Navbar() {
 
           <nav className="hidden md:flex items-center gap-6 ml-10 text-20 text-white/90 cursor-pointer">
            <Link href="/" className="hover:text-white transition">Home</Link>
-  <Link href="/movies" className="hover:text-white transition">Movies</Link>
-  <Link href="/tv" className="hover:text-white transition">TV Shows</Link>
-  <Link href="/plans" className="hover:text-white transition">Plans</Link>
+           <Link href="/movies" className="hover:text-white transition">Movies</Link>
+           <Link href="/tv" className="hover:text-white transition">TV Shows</Link>
+           <Link href="/plans" className="hover:text-white transition">Plans</Link>
           </nav>
         </div>
 
@@ -185,7 +185,7 @@ function MovieRows({ movies }: { movies: { id: number; title: string; poster: st
   const chunks = chunkArray(movies, 7); // split into rows of 7
 
   return (
-    <div className="flex flex-col gap-6">
+    <div className="flex flex-col gap-6 -mb-10">
       {chunks.map((row, rowIndex) => (
         <div key={rowIndex} className="flex gap-4 overflow-x-auto scrollbar-hide ml-10">
           {row.map((movie) => (
