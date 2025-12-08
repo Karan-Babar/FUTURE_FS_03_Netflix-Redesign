@@ -61,11 +61,11 @@ function Navbar() {
       <div className="max-w-[1400px] mx-auto px-4 py-3 flex items-center justify-between">
         <div className="flex items-center gap-6">
           {/* Logo (replace with your AI logo in /public/logo.png) */}
-          <div className="w-28 h-8 relative">
-            <Image src="/logo.png" alt="logo" fill style={{ objectFit: 'contain' }} />
+          <div className="w-28 h-10 relative ">
+            <Image src="/logo1.png" alt="logo" fill className='scale-200' style={{ objectFit: 'contain' }} />
           </div>
 
-          <nav className="hidden md:flex items-center gap-4 text-sm text-white/80">
+          <nav className="hidden md:flex items-center gap-6 ml-10 text-20 text-white/90 cursor-pointer">
             <a className="hover:text-white transition">Home</a>
             <a className="hover:text-white transition">Movies</a>
             <a className="hover:text-white transition">TV Shows</a>
@@ -76,7 +76,7 @@ function Navbar() {
         <div className="flex items-center gap-3">
           {/* Search */}
           <div className="relative hidden sm:flex items-center bg-white/8 rounded-full px-3 py-1 w-[360px] max-w-[60vw]">
-            <FiSearch className="text-white/70 w-5 h-5 mr-2" />
+            <FiSearch className="text-white/70 w-5 h-5 mr-2 cursor-pointer" />
             <input
               value={q}
               onChange={(e) => setQ(e.target.value)}
@@ -86,7 +86,7 @@ function Navbar() {
           </div>
 
           {/* Login Button */}
-          <button className="ml-2 rounded-md bg-red-600 hover:bg-red-700 px-4 py-1 text-sm font-semibold">
+          <button className="ml-2 rounded-md bg-red-600 hover:bg-red-700 px-4 py-1 text-sm font-semibold cursor-pointer">
             Sign In
           </button>
         </div>
@@ -106,12 +106,12 @@ function Sidebar() {
   ];
 
   return (
-    <aside className="hidden sm:flex flex-col items-center gap-6 w-20 py-6 fixed left-0 top-16 h-[calc(100vh-64px)] z-40">
+    <aside className="hidden sm:flex flex-col items-center gap-8 w-20 py-6 fixed left-0 top-16 h-[calc(100vh-64px)] z-40">
 
       {icons.map((it, idx) => (
         <button
           key={idx}
-          className="flex flex-col items-center text-white/80 hover:text-white transition"
+          className="flex flex-col items-center text-white/90 hover:text-white transition cursor-pointer"
           title={it.label}
         >
           <div className="text-2xl">{it.icon}</div>
@@ -143,13 +143,13 @@ function Hero() {
 
           {/* meta + buttons */}
           <div className="flex items-center gap-4 mb-6">
-            <span className="bg-yellow-400 text-black px-2 py-0.5 rounded-md text-sm font-semibold ml-10">IMDb 8.8/10</span>
-            <span className="text-white/70">2B+ Streams</span>
+            <span className="bg-yellow-400 text-black px-2 py-0.5 cursor-pointer rounded-md text-sm font-semibold ml-10">IMDb 8.8/10</span>
+            <span className="text-white/70 cursor-pointer">2B+ Streams</span>
           </div>
 
           <div className="flex items-center gap-4">
-            <button className="rounded-full bg-red-600 px-6 py-2 text-lg font-semibold hover:bg-red-700 ml-10">Play</button>
-            <button className="rounded-full bg-white/10 px-6 py-2 text-lg hover:bg-white/20">Watch Trailer</button>
+            <button className="rounded-full bg-red-600 px-6 py-2 cursor-pointer text-lg font-semibold hover:bg-red-700 ml-10">Play</button>
+            <button className="rounded-full bg-white/10 px-6 py-2 cursor-pointer text-lg hover:bg-white/20">Watch Trailer</button>
           </div>
         </div>
       </div>
@@ -177,7 +177,7 @@ function MovieRows({ movies }: { movies: { id: number; title: string; poster: st
 
 function MovieCard({ title, poster }: { title: string; poster: string }) {
   return (
-    <div className="inline-block w-40 md:w-48 h-60 md:h-72 shrink-0 rounded-md overflow-hidden transform hover:scale-105 transition duration-300">
+    <div className="inline-block w-40 md:w-48 h-60 cursor-pointer md:h-72 shrink-0 rounded-md overflow-hidden transform hover:scale-105 transition duration-300">
       <div className="relative w-full h-full">
         <Image src={poster} alt={title || 'Movie poster'} fill style={{ objectFit: 'cover' }} />
         <div className="absolute inset-0 bg-black/0 hover:bg-black/30 transition" />
