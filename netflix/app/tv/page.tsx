@@ -17,7 +17,7 @@ function chunkArray<T>(arr: T[], size: number): T[][] {
 
 
 // Small helper: sample movie data (replace URLs with your poster images in /public/movies)
-const totalMovies = 18; // total posters you have in /public/movies
+const totalMovies = 46; // total posters you have in /public/movies
 const sampleMovies = Array.from({ length: totalMovies }).map((_, i) => ({
   id: i + 1,
   title: `Movie ${i + 1}`,   // ADD THIS
@@ -40,12 +40,12 @@ export default function Page() {
 
             <section className="px-6 py-8">
               <h2 className="text-2xl font-bold mb-4 ml-10">New this week</h2>
-              <MovieRows movies={sampleMovies.slice(0, 14)} />
+              <MovieRows movies={sampleMovies.slice(32, 39)} />
             </section>
 
             <section className="px-6 py-8">
               <h2 className="text-2xl font-bold mb-4 ml-10">Trending Now</h2>
-              <MovieRows movies={sampleMovies.slice(4, 18)} />
+              <MovieRows movies={sampleMovies.slice(39, 46)} />
             </section>
 
             <div className="h-24" /> {/* spacer */}
