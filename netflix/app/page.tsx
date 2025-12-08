@@ -20,8 +20,10 @@ function chunkArray<T>(arr: T[], size: number): T[][] {
 const totalMovies = 18; // total posters you have in /public/movies
 const sampleMovies = Array.from({ length: totalMovies }).map((_, i) => ({
   id: i + 1,
-  poster: `/movies/movie${i + 1}.jpg`, // points to movie1.jpg ... movie12.jpg
+  title: `Movie ${i + 1}`,   // ADD THIS
+  poster: `/movies/movie${i + 1}.jpg`,
 }));
+
 
 export default function Page() {
   return (
@@ -142,7 +144,7 @@ function Hero() {
       {/* Background image */}
        <div className="absolute inset-0 -z-10 scale-120 translate-x-80 -translate-y-5">
   <Image src="/thumbnail2.jpg" alt="hero" fill priority style={{ objectFit: 'contain' }} />
-  <div className="absolute inset-0 bg-gradient-to-r from-black/100 via-transparent to-transparent" />
+  <div className="absolute inset-0 bg-gradient-to-r from-black/10 via-transparent to-transparent" />
   <div className="absolute inset-0 bg-gradient-to-t from-black/100 via-transparent to-transparent" />
   {/* <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/55" /> */}
 </div>
