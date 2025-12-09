@@ -6,40 +6,69 @@ import { collection, addDoc } from "firebase/firestore";
 import { FiMail, FiPhone, FiMapPin } from "react-icons/fi";
 
 export default function ContactPage() {
-  const [form, setForm] = useState({ name: "", email: "", message: "" });
-  const [success, setSuccess] = useState(false);
+  const [form, setForm] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
 
-  const submitForm = async (e: any) => {
+  const [success, setSuccess] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const submitForm = async (e: React.FormEvent) => {
     e.preventDefault();
+    
+    console.log("Form submission started"); // Debug log
+    setIsSubmitting(true);
 
-    await addDoc(collection(db, "contactMessages"), {
-      ...form,
-      createdAt: new Date(),
-    });
+    try {
+      const docRef = await addDoc(collection(db, "contactMessages"), {
+        ...form,
+        createdAt: new Date(),
+      });
 
-    setSuccess(true);
-    setForm({ name: "", email: "", message: "" });
+      console.log("Document written with ID: ", docRef.id); // Debug log
+      
+      // Show alert
+      alert("Form submitted successfully!");
+      
+      // Set success message
+      setSuccess("Thank you! Your message has been sent successfully.");
+
+      // Reset form
+      setForm({ name: "", email: "", message: "" });
+      
+      // Clear success message after 5 seconds
+      setTimeout(() => setSuccess(""), 5000);
+      
+    } catch (err) {
+      console.error("Error submitting form:", err); // More detailed error log
+      alert("Failed to submit form. Please try again!");
+      setSuccess("");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
-    <div className="px-6 md:px-20 pt-24 pb-20 text-white">
+    <div className="px-6 md:px-20 pt-18 pb-20 text-white">
       <h1 className="text-4xl font-bold mb-10 text-center">Contact Us</h1>
 
       {/* CONTACT INFO */}
       <div className="flex flex-col md:flex-row justify-center gap-10 mb-10">
         <div className="flex items-center gap-3">
           <FiMail className="text-red-500 text-2xl" />
-          <p>Email: support@flixapp.com</p>
+          <p>Email: karan.babar2004@gmail.com</p>
         </div>
 
         <div className="flex items-center gap-3">
           <FiPhone className="text-red-500 text-2xl" />
-          <p>Phone: +1 800 123 4567</p>
+          <p>Phone: +1 98 906 278**</p>
         </div>
 
         <div className="flex items-center gap-3">
           <FiMapPin className="text-red-500 text-2xl" />
-          <p>Mumbai, India</p>
+          <p>Pune, India</p>
         </div>
       </div>
 
@@ -49,9 +78,7 @@ export default function ContactPage() {
         className="max-w-xl mx-auto bg-white/10 backdrop-blur-lg p-8 rounded-xl border border-white/10"
       >
         {success && (
-          <p className="text-green-400 mb-4 text-center">
-            Message Sent Successfully!
-          </p>
+          <p className="text-green-400 mb-4 text-center font-semibold">{success}</p>
         )}
 
         <label className="block mb-3">
@@ -62,6 +89,7 @@ export default function ContactPage() {
             value={form.name}
             onChange={(e) => setForm({ ...form, name: e.target.value })}
             className="w-full mt-1 px-3 py-2 rounded bg-white/20 text-white outline-none"
+            disabled={isSubmitting}
           />
         </label>
 
@@ -73,6 +101,7 @@ export default function ContactPage() {
             value={form.email}
             onChange={(e) => setForm({ ...form, email: e.target.value })}
             className="w-full mt-1 px-3 py-2 rounded bg-white/20 text-white outline-none"
+            disabled={isSubmitting}
           />
         </label>
 
@@ -84,11 +113,16 @@ export default function ContactPage() {
             value={form.message}
             onChange={(e) => setForm({ ...form, message: e.target.value })}
             className="w-full mt-1 px-3 py-2 rounded bg-white/20 text-white outline-none"
+            disabled={isSubmitting}
           />
         </label>
 
-        <button className="w-full bg-red-600 hover:bg-red-700 transition py-2 rounded text-white font-semibold">
-          Submit
+        <button
+          type="submit"
+          disabled={isSubmitting}
+          className="w-full bg-red-600 hover:bg-red-700 transition py-2 rounded text-white cursor-pointer font-semibold disabled:opacity-50 disabled:cursor-not-allowed"
+        >
+          {isSubmitting ? "Submitting..." : "Submit"}
         </button>
       </form>
     </div>

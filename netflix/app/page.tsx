@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import Image from 'next/image';
-import { FiSearch, FiHome, FiFilm, FiTv, FiDownload, FiList, FiUser } from 'react-icons/fi';
+import { FiSearch, FiHome, FiFilm, FiTv, FiDownload, FiMail, FiUser } from 'react-icons/fi';
 import Link from "next/link";
 
 
@@ -105,7 +105,7 @@ function Sidebar() {
     { icon: <FiHome />, label: 'Home' },
     { icon: <FiFilm />, label: 'Movies' },
     { icon: <FiTv />, label: 'TV' },
-    { icon: <FiList />, label: 'My List' },
+    { icon: <FiMail />, label: 'My List' },
     { icon: <FiDownload />, label: 'Downloads' },
   ];
 
@@ -124,9 +124,9 @@ function Sidebar() {
     <FiTv className="text-2xl" />
   </Link>
 
-  <Link href="/my-list" className="flex flex-col items-center text-white/80 hover:text-white transition cursor-pointer">
-    <FiList className="text-2xl" />
-  </Link>
+  <Link href="/contact" className="flex flex-col items-center text-white/80 hover:text-red-600 transition cursor-pointer">
+        <FiMail className="text-2xl" />
+      </Link>
 
   <Link href="/download" className="flex flex-col items-center text-white/80 hover:text-white transition cursor-pointer">
     <FiDownload className="text-2xl" />

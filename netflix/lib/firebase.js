@@ -1,18 +1,19 @@
 // lib/firebase.js
-import { initializeApp } from "firebase/app";
+import { initializeApp, getApps, getApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
- apiKey: "YOUR_KEY",
-authDomain: "YOUR_AUTH_DOMAIN",
-projectId: "YOUR_PROJECT_ID",
-storageBucket: "YOUR_STORAGE_BUCKET",
-messagingSenderId: "YOUR_SENDER_ID",
-appId: "YOUR_APP_ID",
+  apiKey: "YOUR_REAL_KEY",
+  authDomain: "yourproject.firebaseapp.com",
+  projectId: "yourproject-id",
+  storageBucket: "yourproject-id.appspot.com",
+  messagingSenderId: "xxxx",
+  appId: "1:xxxx:web:xxxx"
 };
 
-const app = initializeApp(firebaseConfig);
+// Prevent Next.js from initializing Firebase twice
+const app = !getApps().length ? initializeApp(firebaseConfig) : getApp();
 
 export const auth = getAuth(app);
 export const db = getFirestore(app);
