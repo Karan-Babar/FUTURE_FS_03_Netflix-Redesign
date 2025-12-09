@@ -1,5 +1,5 @@
 'use client';
-import { FiHome, FiFilm, FiTv, FiList, FiDownload } from "react-icons/fi";
+import { FiHome, FiFilm, FiTv, FiMail, FiDownload } from "react-icons/fi";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
@@ -33,8 +33,8 @@ export default function Sidebar() {
         <FiTv className="text-2xl" />
       </Link>
 
-      <Link href="/my-list" className={linkStyle("/my-list")}>
-        <FiList className="text-2xl" />
+      <Link href="/contact" className="flex flex-col items-center text-white/80 hover:text-red-600 transition cursor-pointer">
+        <FiMail className="text-2xl" />
       </Link>
 
       <Link href="/download" className={linkStyle("/download")}>

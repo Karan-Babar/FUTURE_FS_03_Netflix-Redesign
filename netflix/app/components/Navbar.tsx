@@ -36,7 +36,8 @@ export default function Navbar() {
             <Link href="/" className={linkStyle("/")}>Home</Link>
             <Link href="/movies" className={linkStyle("/movies")}>Movies</Link>
             <Link href="/tv" className={linkStyle("/tv")}>TV Shows</Link>
-            <Link href="/plans" className={linkStyle("/plans")}>Plans</Link>
+            <Link href="/contact" className={linkStyle("/contact")}>Contact</Link>
+
           </nav>
         </div>
 
