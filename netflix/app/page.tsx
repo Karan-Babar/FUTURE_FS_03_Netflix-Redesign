@@ -69,7 +69,7 @@ function Navbar() {
             <Image src="/logo1.png" alt="logo" fill className='scale-200' style={{ objectFit: 'contain' }} />
           </div>
 
-          <nav className="hidden md:flex items-center gap-6 ml-10 text-20 text-white/90 cursor-pointer">
+          <nav className="hidden md:flex items-center gap-6 ml-10 text-20 text-white/90 cursor-pointer ">
            <Link href="/" className="hover:text-white transition">Home</Link>
            <Link href="/movies" className="hover:text-white transition">Movies</Link>
            <Link href="/tv" className="hover:text-white transition">TV Shows</Link>

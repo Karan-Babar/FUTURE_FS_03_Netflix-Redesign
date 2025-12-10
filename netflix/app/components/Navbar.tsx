@@ -29,20 +29,34 @@ export default function Navbar() {
         
         <div className="flex items-center gap-6">
           <div className="w-28 h-10 relative">
-            <Image src="/logo1.png" alt="logo" fill className="scale-200" style={{ objectFit: 'contain' }} />
-          </div>
+  <Image
+    src="/logo1.png"
+    alt="logo"
+    fill
+    className="
+      object-contain
+      scale-120   -ml-5       /* default */
+      sm:scale-130  sm:ml-5     /* ≥ 640px */
+      md:scale-150       /* ≥ 768px */
+      lg:scale-170       /* ≥ 1024px */
+      xl:scale-200       /* ≥ 1280px */
+    "
+  />
+</div>
 
-          <nav className="hidden md:flex items-center gap-8 ml-10 text-20 cursor-pointer">
+        <nav className="hidden sm:flex items-center gap-8 ml-10 text-sm md:text-sm lg:text-base xl:text-base cursor-pointer">
+             
             <Link href="/" className={linkStyle("/")}>Home</Link>
             <Link href="/movies" className={linkStyle("/movies")}>Movies</Link>
-            <Link href="/tv" className={linkStyle("/tv")}>TV Shows</Link>
+             <Link href="/tv" className={linkStyle("/tv")}>TV Shows</Link>
             <Link href="/contact" className={linkStyle("/contact")}>Contact</Link>
 
-          </nav>
+        </nav>
+
         </div>
 
         <div className="flex items-center gap-3">
-          <div className="relative hidden sm:flex items-center bg-white/8 rounded-full px-3 py-1 w-[360px] max-w-[60vw]">
+          <div className="relative  sm:flex items-center bg-white/8 rounded-full px-3 py-1 w-[360px] max-w-[60vw]">
             <FiSearch className="text-white/70 w-5 h-5 mr-2" />
             <input
               value={q}
