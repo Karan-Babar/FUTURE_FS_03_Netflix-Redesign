@@ -112,23 +112,23 @@ function Sidebar() {
   return (
     <aside className="hidden sm:flex flex-col items-center gap-6 w-20 py-6 fixed left-0 top-16 h-[calc(100vh-64px)] z-40">
 
-  <Link href="/" className="flex flex-col items-center text-white/80 hover:text-white transition cursor-pointer">
+  <Link href="/" className="flex flex-col items-center text-white/100 hover:text-red-600 transition cursor-pointer">
     <FiHome className="text-2xl" />
   </Link>
 
-  <Link href="/movies" className="flex flex-col items-center text-white/80 hover:text-white transition cursor-pointer">
+  <Link href="/movies" className="flex flex-col items-center text-white/100 hover:text-red-600 transition cursor-pointer">
     <FiFilm className="text-2xl" />
   </Link>
 
-  <Link href="/tv" className="flex flex-col items-center text-white/80 hover:text-white transition cursor-pointer">
+  <Link href="/tv" className="flex flex-col items-center text-white/100 hover:text-red-600 transition cursor-pointer">
     <FiTv className="text-2xl" />
   </Link>
 
-  <Link href="/contact" className="flex flex-col items-center text-white/80 hover:text-red-600 transition cursor-pointer">
+  <Link href="/contact" className="flex flex-col items-center text-white/100 hover:text-red-600 transition cursor-pointer">
         <FiMail className="text-2xl" />
       </Link>
 
-  <Link href="/download" className="flex flex-col items-center text-white/80 hover:text-white transition cursor-pointer">
+  <Link href="/download" className="flex flex-col items-center text-white/100 hover:text-red-600 transition cursor-pointer">
     <FiDownload className="text-2xl" />
   </Link>
 

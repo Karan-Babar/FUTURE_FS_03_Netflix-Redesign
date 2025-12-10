@@ -18,16 +18,21 @@ export default function ContactPage() {
   const submitForm = async (e: React.FormEvent) => {
     e.preventDefault();
     
-    console.log("Form submission started"); // Debug log
+    console.log("Form submission started");
+    console.log("Form data:", form);
     setIsSubmitting(true);
 
     try {
+      console.log("Attempting to add document to Firestore...");
+      
       const docRef = await addDoc(collection(db, "contactMessages"), {
-        ...form,
+        name: form.name,
+        email: form.email,
+        message: form.message,
         createdAt: new Date(),
       });
 
-      console.log("Document written with ID: ", docRef.id); // Debug log
+      console.log("✅ Document written with ID:", docRef.id);
       
       // Show alert
       alert("Form submitted successfully!");
@@ -42,10 +47,11 @@ export default function ContactPage() {
       setTimeout(() => setSuccess(""), 5000);
       
     } catch (err) {
-      console.error("Error submitting form:", err); // More detailed error log
+      console.error("❌ Error submitting form:", err);
       alert("Failed to submit form. Please try again!");
       setSuccess("");
     } finally {
+      console.log("Submission process completed");
       setIsSubmitting(false);
     }
   };

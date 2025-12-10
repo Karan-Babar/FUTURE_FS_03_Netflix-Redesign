@@ -33,7 +33,7 @@ export default function Sidebar() {
         <FiTv className="text-2xl" />
       </Link>
 
-      <Link href="/contact" className="flex flex-col items-center text-white/80 hover:text-red-600 transition cursor-pointer">
+      <Link href="/contact" className={linkStyle("/contact")}>
         <FiMail className="text-2xl" />
       </Link>
 
