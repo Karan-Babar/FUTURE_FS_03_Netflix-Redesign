@@ -143,20 +143,21 @@ function Hero() {
 <section className="relative z-0 h-[40vh] sm:h-[50vh] w-full">
       {/* Background image */}
        <div className="absolute inset-0 -z-10 scale-110 mr-180 -mt-40
-                      sm:scale-160  
-          xl:scale-120 xl:translate-x-80 xl:-translate-y-5">
+                      sm:scale-160  md:scale-170 md:-mt-50 md:ml-65
+                      lg:scale-100 lg:-mt-20 lg:ml-150 lg:mr-16
+          xl:scale-100 xl:translate-x-16 xl:translate-y-3">
   <Image src="/thumbnail2.jpg" alt="hero" fill priority style={{ objectFit: 'contain' }} />
   <div className="absolute inset-0 bg-gradient-to-r from-black/10 via-transparent to-transparent" />
-  <div className="absolute inset-0 bg-gradient-to-t from-black/100 mb-15 via-transparent to-transparent" />
+  <div className="absolute inset-0 bg-gradient-to-t from-black/100 mb-15 sm:mb-24 md:mb-30 lg:mb-0 via-transparent to-transparent" />
   {/* <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/55" /> */}
 </div>
 
 
       <div className="max-w-[1400px] mx-auto px-6 h-full flex items-end">
-        <div className="pb-8 md:pb-8 -ml-12 w-full md:w-1/2">
+        <div className="pb-8 md:pb-0 -ml-12 sm:pb-2 lg:pb-7 xl:ml-0 w-full md:w-1/2">
           {/* Title image or text */}
           <div className="mb-2">
-            <h1 className="text-2xl sm:text-5xl md:text-7xl font-extrabold tracking-tight ml-10">MONEY HEIST PART 4</h1>
+            <h1 className="text-2xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight ml-10">MONEY HEIST PART 4</h1>
           </div>
 
           {/* meta + buttons */}
