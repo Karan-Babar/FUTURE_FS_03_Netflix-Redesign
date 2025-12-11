@@ -19,28 +19,37 @@ export default function Sidebar() {
      ${isActive(href) ? "text-white after:w-6 after:bg-red-600" : ""}`;
 
   return (
-    <aside className="hidden sm:flex flex-col items-center gap-6 w-20 py-6 fixed left-0 top-16 h-[calc(100vh-64px)] z-40">
+    <aside
+  className="
+     hidden md:flex
+    flex-col items-center gap-6
+    w-16 md:w-20
+    py-6
+    fixed left-0 top-16
+    h-[calc(100vh-64px)]
+    z-40
+  "
+>
+  <Link href="/" className={linkStyle("/")}>
+    <FiHome className="text-xl md:text-2xl" />
+  </Link>
 
-      <Link href="/" className={linkStyle("/")}>
-        <FiHome className="text-2xl" />
-      </Link>
+  <Link href="/movies" className={linkStyle("/movies")}>
+    <FiFilm className="text-xl md:text-2xl" />
+  </Link>
 
-      <Link href="/movies" className={linkStyle("/movies")}>
-        <FiFilm className="text-2xl" />
-      </Link>
+  <Link href="/tv" className={linkStyle("/tv")}>
+    <FiTv className="text-xl md:text-2xl" />
+  </Link>
 
-      <Link href="/tv" className={linkStyle("/tv")}>
-        <FiTv className="text-2xl" />
-      </Link>
+  <Link href="/contact" className={linkStyle("/contact")}>
+    <FiMail className="text-xl md:text-2xl" />
+  </Link>
 
-      <Link href="/contact" className={linkStyle("/contact")}>
-        <FiMail className="text-2xl" />
-      </Link>
+  <Link href="/download" className={linkStyle("/download")}>
+    <FiDownload className="text-xl md:text-2xl" />
+  </Link>
+</aside>
 
-      <Link href="/download" className={linkStyle("/download")}>
-        <FiDownload className="text-2xl" />
-      </Link>
-
-    </aside>
   );
 }

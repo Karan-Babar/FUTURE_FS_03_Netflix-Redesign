@@ -110,7 +110,7 @@ function Sidebar() {
   ];
 
   return (
-    <aside className="hidden sm:flex flex-col items-center gap-6 w-20 py-6 fixed left-0 top-16 h-[calc(100vh-64px)] z-40">
+    <aside className="hidden md:flex flex-col items-center gap-6 w-20 py-6 fixed left-0 top-16 h-[calc(100vh-64px)] z-40">
 
   <Link href="/" className="flex flex-col items-center text-white/100 hover:text-red-600 transition cursor-pointer">
     <FiHome className="text-2xl" />

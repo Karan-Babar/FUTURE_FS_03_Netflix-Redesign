@@ -2,6 +2,7 @@ import "./globals.css";
 import Navbar from "./components/Navbar";
 import Sidebar from "./components/Sidebar";
 import Footer from "./components/Footer";
+import MobileNavbar from "./components/MobileNavbar";
 
 export const metadata = {
   title: "Netflix Redesign",
@@ -19,6 +20,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             {children}
           </main>
         </div>
+         <MobileNavbar />
 
          <Footer />
       </body>
