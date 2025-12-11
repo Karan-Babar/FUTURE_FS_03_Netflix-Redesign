@@ -37,14 +37,14 @@ export default function Navbar() {
       object-contain
       scale-120   -ml-5       /* default */
       sm:scale-130  sm:ml-5     /* ≥ 640px */
-      md:scale-150       /* ≥ 768px */
+      md:scale-150  md:-ml-1     /* ≥ 768px */
       lg:scale-170       /* ≥ 1024px */
       xl:scale-200       /* ≥ 1280px */
     "
   />
 </div>
 
-        <nav className="hidden sm:flex items-center gap-8 ml-10 text-sm md:text-sm lg:text-base xl:text-base cursor-pointer">
+        <nav className="hidden md:flex items-center gap-8 ml-10 text-sm md:text-sm md:-ml-2 md:gap-4 lg:text-base xl:text-base xl:gap-8 xl:ml-2 cursor-pointer">
              
             <Link href="/" className={linkStyle("/")}>Home</Link>
             <Link href="/movies" className={linkStyle("/movies")}>Movies</Link>
@@ -56,7 +56,10 @@ export default function Navbar() {
         </div>
 
         <div className="flex items-center gap-3">
-          <div className="relative  sm:flex items-center bg-white/8 rounded-full px-3 py-1 w-[360px] max-w-[60vw]">
+          <div className=" flex items-center bg-white/15 rounded-full px-2 py-1 w-[130px] h-5 -ml-5 -mr-3 text-xs                 /* mobile small */
+              sm:w-[220px] sm:text-sm sm:h-7 sm:mr-5           /* ≥640px */
+              md:w-[260px] md:text-md md:h-8               /* ≥768px */
+              lg:w-[360px] lg:text-md    max-w-[70vw]">
             <FiSearch className="text-white/70 w-5 h-5 mr-2" />
             <input
               value={q}
@@ -66,7 +69,10 @@ export default function Navbar() {
             />
           </div>
 
-          <button className="ml-2 rounded-md bg-red-600 hover:bg-red-700 px-4 py-1 text-sm font-semibold cursor-pointer">
+          <button className="ml-2 rounded-md bg-red-600 hover:bg-red-700 px-2 py-1 -mr-2 text-xs  /* smaller text for mobile */
+                    sm:px-4 sm:py-1 sm:text-sm sm:mr-3   /* ≥640px (tablets) */
+                    md:px-5 md:py-1.5 md:text-sm md:mr-2 /* ≥768px */
+                    lg:px-6 lg:py-2 lg:text-base  /* ≥1024px desktops */ font-semibold cursor-pointer">
             Sign In
           </button>
         </div>
