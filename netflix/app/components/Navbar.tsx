@@ -24,8 +24,8 @@ export default function Navbar() {
      ${isActive(href) ? " after:content-[''] after:absolute after:transition-all after:duration-300 after:left-0 after:-bottom-[2px] after:h-[3px] after:bg-red-600 after:w-full" : "after:w-0 hover:after:w-full"}`;
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 bg-black/60 backdrop-blur-md border-b border-white/5">
-      <div className="max-w-[1400px] mx-auto px-4 py-3 flex items-center justify-between">
+    <header className="fixed inset-x-0 top-0 z-50  bg-black/60 backdrop-blur-md border-b border-white/5">
+      <div className="max-w-[1400px] mx-auto px-4 py-1 sm:py-2 md:py-3 flex items-center justify-between">
         
         <div className="flex items-center gap-6">
           <div className="w-28 h-10 relative">

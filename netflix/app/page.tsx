@@ -29,7 +29,7 @@ export default function Page() {
   return (
     <div className="min-h-screen bg-black text-white overflow-x-hidden">
       {/* Top Navbar + Left Sidebar are placed in the layout of the page */}
-      <Navbar />
+      
 
       <div className="pt-16"> {/* padding top to avoid navbar overlap */}
         <div className="flex">
@@ -57,47 +57,47 @@ export default function Page() {
 }
 
 /* ------------------ Navbar ------------------ */
-function Navbar() {
-  const [q, setQ] = useState('');
+// function Navbar() {
+//   const [q, setQ] = useState('');
 
-  return (
-    <header className="fixed inset-x-0 top-0 z-40 bg-black/60 backdrop-blur-md border-b border-white/5">
-      <div className="max-w-[1400px] mx-auto px-4 py-3 flex items-center justify-between">
-        <div className="flex items-center gap-6">
-          {/* Logo (replace with your AI logo in /public/logo.png) */}
-          <div className="w-28 h-10 relative ">
-            <Image src="/logo1.png" alt="logo" fill className='scale-200' style={{ objectFit: 'contain' }} />
-          </div>
+//   return (
+//     <header className="fixed inset-x-0 top-0 z-40 bg-black/60 backdrop-blur-md border-b border-white/5">
+//       <div className="max-w-[1400px] mx-auto px-4 py-3 flex items-center justify-between">
+//         <div className="flex items-center gap-6">
+//           {/* Logo (replace with your AI logo in /public/logo.png) */}
+//           <div className="w-28 h-10 relative ">
+//             <Image src="/logo1.png" alt="logo" fill className='scale-200' style={{ objectFit: 'contain' }} />
+//           </div>
 
-          <nav className="hidden md:flex items-center gap-6 ml-10 text-20 text-white/90 cursor-pointer ">
-           <Link href="/" className="hover:text-white transition">Home</Link>
-           <Link href="/movies" className="hover:text-white transition">Movies</Link>
-           <Link href="/tv" className="hover:text-white transition">TV Shows</Link>
-           <Link href="/plans" className="hover:text-white transition">Plans</Link>
-          </nav>
-        </div>
+//           <nav className="hidden md:flex items-center gap-6 ml-10 text-20 text-white/90 cursor-pointer ">
+//            <Link href="/" className="hover:text-white transition">Home</Link>
+//            <Link href="/movies" className="hover:text-white transition">Movies</Link>
+//            <Link href="/tv" className="hover:text-white transition">TV Shows</Link>
+//            <Link href="/plans" className="hover:text-white transition">Plans</Link>
+//           </nav>
+//         </div>
 
-        <div className="flex items-center gap-3">
-          {/* Search */}
-          <div className="relative hidden sm:flex items-center bg-white/8 rounded-full px-3 py-1 w-[360px] max-w-[60vw]">
-            <FiSearch className="text-white/70 w-5 h-5 mr-2 cursor-pointer" />
-            <input
-              value={q}
-              onChange={(e) => setQ(e.target.value)}
-              placeholder="Search"
-              className="bg-transparent outline-none placeholder:text-white/60 text-white w-full"
-            />
-          </div>
+//         <div className="flex items-center gap-3">
+//           {/* Search */}
+//           <div className="relative hidden sm:flex items-center bg-white/8 rounded-full px-3 py-1 w-[360px] max-w-[60vw]">
+//             <FiSearch className="text-white/70 w-5 h-5 mr-2 cursor-pointer" />
+//             <input
+//               value={q}
+//               onChange={(e) => setQ(e.target.value)}
+//               placeholder="Search"
+//               className="bg-transparent outline-none placeholder:text-white/60 text-white w-full"
+//             />
+//           </div>
 
-          {/* Login Button */}
-          <button className="ml-2 rounded-md bg-red-600 hover:bg-red-700 px-4 py-1 text-sm font-semibold cursor-pointer">
-            Sign In
-          </button>
-        </div>
-      </div>
-    </header>
-  );
-}
+//           {/* Login Button */}
+//           <button className="ml-2 rounded-md bg-red-600 hover:bg-red-700 px-4 py-1 text-sm font-semibold cursor-pointer">
+//             Sign In
+//           </button>
+//         </div>
+//       </div>
+//     </header>
+//   );
+// }
 
 /* ------------------ Sidebar ------------------ */
 function Sidebar() {
@@ -140,32 +140,34 @@ function Sidebar() {
 /* ------------------ Hero ------------------ */
 function Hero() {
   return (
-<section className="relative z-0 h-[40vh] md:h-[50vh] w-full">
+<section className="relative z-0 h-[40vh] sm:h-[50vh] w-full">
       {/* Background image */}
-       <div className="absolute inset-0 -z-10 scale-120 translate-x-80 -translate-y-5">
+       <div className="absolute inset-0 -z-10 scale-110 mr-180 -mt-40
+                      sm:scale-160  
+          xl:scale-120 xl:translate-x-80 xl:-translate-y-5">
   <Image src="/thumbnail2.jpg" alt="hero" fill priority style={{ objectFit: 'contain' }} />
   <div className="absolute inset-0 bg-gradient-to-r from-black/10 via-transparent to-transparent" />
-  <div className="absolute inset-0 bg-gradient-to-t from-black/100 via-transparent to-transparent" />
+  <div className="absolute inset-0 bg-gradient-to-t from-black/100 mb-15 via-transparent to-transparent" />
   {/* <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/55" /> */}
 </div>
 
 
       <div className="max-w-[1400px] mx-auto px-6 h-full flex items-end">
-        <div className="pb-2 md:pb-8 w-full md:w-1/2">
+        <div className="pb-8 md:pb-8 -ml-12 w-full md:w-1/2">
           {/* Title image or text */}
-          <div className="mb-4">
-            <h1 className="text-4xl md:text-7xl font-extrabold tracking-tight ml-10">MONEY HEIST PART 4</h1>
+          <div className="mb-2">
+            <h1 className="text-2xl sm:text-5xl md:text-7xl font-extrabold tracking-tight ml-10">MONEY HEIST PART 4</h1>
           </div>
 
           {/* meta + buttons */}
-          <div className="flex items-center gap-4 mb-6">
-            <span className="bg-yellow-400 text-black px-2 py-0.5 cursor-pointer rounded-md text-sm font-semibold ml-10">IMDb 8.8/10</span>
-            <span className="text-white/70 cursor-pointer">2B+ Streams</span>
+          <div className="flex items-center gap-3 sm:gap-4 mb-3">
+            <span className="bg-yellow-400 text-black px-2 py-0.5 cursor-pointer rounded-md text-xs sm:text-sm font-semibold ml-10">IMDb 8.8/10</span>
+            <span className="text-white/70 text-xs sm:text-sm cursor-pointer">2B+ Streams</span>
           </div>
 
-          <div className="flex items-center gap-4">
-            <button className="rounded-full bg-red-600 px-6 py-2 cursor-pointer text-lg font-semibold hover:bg-red-700 ml-10">Play</button>
-            <button className="rounded-full bg-white/10 px-6 py-2 cursor-pointer text-lg hover:bg-white/20">Watch Trailer</button>
+          <div className="flex items-center gap-3 sm:gap-4">
+            <button className="rounded-full bg-red-600 px-6 py-2 cursor-pointer text-sm sm:text-lg font-semibold hover:bg-red-700 ml-10">Play</button>
+            <button className="rounded-full bg-white/20 px-6 py-2 cursor-pointer text-sm sm:text-lg hover:bg-white/20">Watch Trailer</button>
           </div>
         </div>
       </div>
