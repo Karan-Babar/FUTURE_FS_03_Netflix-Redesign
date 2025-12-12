@@ -39,12 +39,12 @@ export default function Page() {
             <Hero />
 
             <section className="px-6 py-8">
-              <h2 className="text-2xl font-bold mb-4 ml-10">New this week</h2>
+              <h2 className="text-2xl font-bold mb-4 md:ml-10">New this week</h2>
               <MovieRows movies={sampleMovies.slice(0, 14)} />
             </section>
 
             <section className="px-6 py-8">
-              <h2 className="text-2xl font-bold mb-4 ml-10">Trending Now</h2>
+              <h2 className="text-2xl font-bold mb-4 md:ml-10">Trending Now</h2>
               <MovieRows movies={sampleMovies.slice(4, 18)} />
             </section>
 
@@ -140,35 +140,47 @@ function Sidebar() {
 /* ------------------ Hero ------------------ */
 function Hero() {
   return (
-<section className="relative z-0 h-[40vh] sm:h-[50vh] w-full">
-      {/* Background image */}
-       <div className="absolute inset-0 -z-10 scale-110 mr-180 -mt-40
-                      sm:scale-160  md:scale-170 md:-mt-50 md:ml-65
-                      lg:scale-100 lg:-mt-20 lg:ml-150 lg:mr-16
-          xl:scale-100 xl:translate-x-16 xl:translate-y-3">
-  <Image src="/thumbnail2.jpg" alt="hero" fill priority style={{ objectFit: 'contain' }} />
-  <div className="absolute inset-0 bg-gradient-to-r from-black/10 via-transparent to-transparent" />
-  <div className="absolute inset-0 bg-gradient-to-t from-black/100 mb-15 sm:mb-24 md:mb-30 lg:mb-0 via-transparent to-transparent" />
-  {/* <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/55" /> */}
-</div>
+    <section className="relative z-0 h-[40vh] sm:h-[50vh] w-full overflow-hidden">
+      
+      {/* Background */}
+      <div className="absolute inset-0 -z-10 overflow-hidden">
+        <Image
+          src="/thumbnail2.jpg"
+          alt="hero"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover"
+        />
 
+        <div className="absolute inset-0 bg-gradient-to-r from-black/10 via-transparent to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/100 via-transparent to-transparent" />
+      </div>
 
+      {/* Content */}
       <div className="max-w-[1400px] mx-auto px-6 h-full flex items-end">
-        <div className="pb-12 md:pb-0 -ml-12 sm:pb-2 lg:pb-7 xl:ml-0 w-full md:w-1/2">
-          {/* Title image or text */}
+        <div className="pb-12 md:pb-0 w-full md:w-1/2">
+
           <div className="mb-2">
-            <h1 className="text-2xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight ml-10">MONEY HEIST PART 4</h1>
+            <h1 className="text-2xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight">
+              MONEY HEIST PART 4
+            </h1>
           </div>
 
-          {/* meta + buttons */}
           <div className="flex items-center gap-3 sm:gap-4 mb-3">
-            <span className="bg-yellow-400 text-black px-2 py-0.5 cursor-pointer rounded-md text-xs sm:text-sm font-semibold ml-10">IMDb 8.8/10</span>
-            <span className="text-white/70 text-xs sm:text-sm cursor-pointer">2B+ Streams</span>
+            <span className="bg-yellow-400 text-black px-2 py-0.5 rounded-md text-xs sm:text-sm font-semibold">
+              IMDb 8.8/10
+            </span>
+            <span className="text-white/70 text-xs sm:text-sm">2B+ Streams</span>
           </div>
 
           <div className="flex items-center gap-3 sm:gap-4">
-            <button className="rounded-full bg-red-600 px-6 py-2 cursor-pointer text-sm sm:text-lg font-semibold hover:bg-red-700 ml-10">Play</button>
-            <button className="rounded-full bg-white/20 px-6 py-2 cursor-pointer text-sm sm:text-lg hover:bg-white/20">Watch Trailer</button>
+            <button className="rounded-full bg-red-600 px-6 py-2 text-sm sm:text-lg font-semibold hover:bg-red-700">
+              Play
+            </button>
+            <button className="rounded-full bg-white/20 px-6 py-2 text-sm sm:text-lg hover:bg-white/30">
+              Watch Trailer
+            </button>
           </div>
         </div>
       </div>
@@ -183,7 +195,7 @@ function MovieRows({ movies }: { movies: { id: number; title: string; poster: st
   return (
     <div className="flex flex-col gap-6 -mb-10">
       {chunks.map((row, rowIndex) => (
-        <div key={rowIndex} className="flex gap-4 overflow-x-auto scrollbar-hide ml-10">
+        <div key={rowIndex} className="flex gap-4 overflow-x-auto scrollbar-hide scroll-smooth px-2 md:ml-10">
           {row.map((movie) => (
             <MovieCard key={movie.id} title={movie.title} poster={movie.poster} />
           ))}

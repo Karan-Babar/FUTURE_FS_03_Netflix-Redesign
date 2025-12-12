@@ -57,7 +57,7 @@ export default function ContactPage() {
   };
 
   return (
-    <div className="px-6 md:px-20 pt-18 pb-20 text-white">
+    <div className="px-6 md:px-20 pt-20 md:-mt-5 pb-20 text-white">
       <h1 className="text-4xl font-bold mb-10 text-center">Contact Us</h1>
 
       {/* CONTACT INFO */}

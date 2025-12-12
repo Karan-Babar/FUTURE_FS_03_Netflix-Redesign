@@ -1,4 +1,18 @@
 @import "tailwindcss";
+* {
+  max-width: 100% !important;
+}
+
+/* temporary debugging & safety */
+* { box-sizing: border-box; }
+html, body, #__next { overflow-x: hidden !important; }
+
+/* stop oversized media */
+img, video, iframe { max-width: 100%; height: auto; display: block; }
+
+/* clamp any accidental huge fixed-width containers */
+[class*="max-w-"] { max-width: 100% !important; }
+
 
 :root {
   --background: #ffffff;
@@ -28,4 +42,14 @@ body {
 html, body {
   overflow-x: hidden;
 }
+
+/* Hide scrollbar but keep scroll functionality */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
 
