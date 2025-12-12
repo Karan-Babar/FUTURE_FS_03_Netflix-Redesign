@@ -12,18 +12,16 @@ export default function Sidebar() {
   };
 
   const linkStyle = (href: string) =>
-    `flex flex-col items-center cursor-pointer transition relative
-     text-white/80 hover:text-white
-     after:absolute after:-bottom-1 after:h-[3px] after:w-0 after:bg-red-600 after:transition-all after:duration-300
-     hover:after:w-6
-     ${isActive(href) ? "text-white after:w-6 after:bg-red-600" : ""}`;
+    `flex flex-col items-center text-xl transition 
+     ${isActive(href) ? "text-red-600" : "text-white/90"}
+     hover:text-red-600`;
 
   return (
     <aside
   className="
      hidden md:flex
     flex-col items-center gap-6
-    w-16 md:w-20
+    w-16 md:w-20 md:-ml-2
     py-6
     fixed left-0 top-16
     h-[calc(100vh-64px)]

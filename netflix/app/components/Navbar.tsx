@@ -35,16 +35,16 @@ export default function Navbar() {
     fill
     className="
       object-contain
-      scale-120   -ml-5       /* default */
-      sm:scale-130  sm:ml-5     /* ≥ 640px */
+      scale-140         /* default */
+      sm:scale-140  sm:ml-5     /* ≥ 640px */
       md:scale-150  md:-ml-1     /* ≥ 768px */
-      lg:scale-170       /* ≥ 1024px */
-      xl:scale-200       /* ≥ 1280px */
+      lg:scale-170  lg:ml-4    /* ≥ 1024px */
+      xl:scale-200  xl:ml-16     /* ≥ 1280px */
     "
   />
 </div>
 
-        <nav className="hidden md:flex items-center gap-8 ml-10 text-sm md:text-sm md:-ml-2 md:gap-4 lg:text-base xl:text-base xl:gap-8 xl:ml-2 cursor-pointer">
+        <nav className="hidden md:flex items-center gap-8 ml-10 text-sm md:text-sm md:-ml-2 md:gap-4 lg:gap-5 lg:text-base lg:ml-3 xl:text-base xl:gap-10 xl:ml-30 cursor-pointer">
              
             <Link href="/" className={linkStyle("/")}>Home</Link>
             <Link href="/movies" className={linkStyle("/movies")}>Movies</Link>
@@ -69,7 +69,7 @@ export default function Navbar() {
             />
           </div>
 
-          <button className="ml-2 rounded-md bg-red-600 hover:bg-red-700 px-2 py-1 -mr-2 text-xs  /* smaller text for mobile */
+          <button className="ml-2 rounded-md bg-red-600 hover:bg-red-700 px-2 py-1 mr-2 text-xs  /* smaller text for mobile */
                     sm:px-4 sm:py-1 sm:text-sm    /* ≥640px (tablets) */
                     md:px-5 md:py-1.5 md:text-sm  /* ≥768px */
                     lg:px-6 lg:py-2 lg:text-base lg:mr-3   /* ≥1024px desktops */ font-semibold cursor-pointer">
