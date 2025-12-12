@@ -72,7 +72,7 @@ export default function Navbar() {
           <button className="ml-2 rounded-md bg-red-600 hover:bg-red-700 px-2 py-1 mr-2 text-xs  /* smaller text for mobile */
                     sm:px-4 sm:py-1 sm:text-sm    /* ≥640px (tablets) */
                     md:px-5 md:py-1.5 md:text-sm  /* ≥768px */
-                    lg:px-6 lg:py-2 lg:text-base lg:mr-3   /* ≥1024px desktops */ font-semibold cursor-pointer">
+                    lg:px-6 lg:py-2 lg:text-base lg:mr-3 xl:mr-15  /* ≥1024px desktops */ font-semibold cursor-pointer">
             Sign In
           </button>
         </div>
