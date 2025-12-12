@@ -61,23 +61,7 @@ export default function ContactPage() {
       <h1 className="text-4xl font-bold mb-10 text-center">Contact Us</h1>
 
       {/* CONTACT INFO */}
-      <div className="flex flex-col md:flex-row justify-center gap-10 mb-10">
-        <div className="flex items-center gap-3">
-          <FiMail className="text-red-500 text-2xl" />
-          <p>Email: karan.babar2004@gmail.com</p>
-        </div>
-
-        <div className="flex items-center gap-3">
-          <FiPhone className="text-red-500 text-2xl" />
-          <p>Phone: +1 98 906 278**</p>
-        </div>
-
-        <div className="flex items-center gap-3">
-          <FiMapPin className="text-red-500 text-2xl" />
-          <p>Pune, India</p>
-        </div>
-      </div>
-
+      
       {/* CONTACT FORM */}
       <form
         onSubmit={submitForm}
@@ -131,6 +115,23 @@ export default function ContactPage() {
           {isSubmitting ? "Submitting..." : "Submit"}
         </button>
       </form>
+      <div className="flex flex-col md:flex-row justify-center gap-4 md:gap-10 mt-15">
+        <div className="flex items-center gap-3">
+          <FiMail className="text-red-500 text-2xl" />
+          <p>Email: karan.babar2004@gmail.com</p>
+        </div>
+
+        <div className="flex items-center gap-3">
+          <FiPhone className="text-red-500 text-2xl" />
+          <p>Phone: +1 98 906 278**</p>
+        </div>
+
+        <div className="flex items-center gap-3">
+          <FiMapPin className="text-red-500 text-2xl" />
+          <p>Pune, India</p>
+        </div>
+      </div>
+
     </div>
   );
 }
