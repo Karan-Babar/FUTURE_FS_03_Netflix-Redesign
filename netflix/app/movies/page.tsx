@@ -28,9 +28,11 @@ export default function Page() {
   return (
     <div className="min-h-screen bg-black text-white overflow-x-hidden">
       
+
       <div className="pt-16"> 
         <div className="flex">
          
+
           <main className="flex-1">
             <Hero />
 
