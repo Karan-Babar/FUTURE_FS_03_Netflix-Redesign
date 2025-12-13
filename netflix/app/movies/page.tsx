@@ -6,7 +6,6 @@ import { FiSearch, FiHome, FiFilm, FiTv, FiDownload, FiMail, FiUser } from 'reac
 import Link from "next/link";
 
 
-// Helper to split an array into chunks of given size
 function chunkArray<T>(arr: T[], size: number): T[][] {
   const chunks: T[][] = [];
   for (let i = 0; i < arr.length; i += size) {
@@ -16,11 +15,11 @@ function chunkArray<T>(arr: T[], size: number): T[][] {
 }
 
 
-// Small helper: sample movie data (replace URLs with your poster images in /public/movies)
-const totalMovies = 32; // total posters you have in /public/movies
+
+const totalMovies = 32; // total posters 
 const sampleMovies = Array.from({ length: totalMovies }).map((_, i) => ({
   id: i + 1,
-  title: `Movie ${i + 1}`,   // ADD THIS
+  title: `Movie ${i + 1}`,  
   poster: `/movies/movie${i + 1}.jpg`,
 }));
 
@@ -28,13 +27,10 @@ const sampleMovies = Array.from({ length: totalMovies }).map((_, i) => ({
 export default function Page() {
   return (
     <div className="min-h-screen bg-black text-white overflow-x-hidden">
-      {/* Top Navbar + Left Sidebar are placed in the layout of the page */}
       
-
-      <div className="pt-16"> {/* padding top to avoid navbar overlap */}
+      <div className="pt-16"> 
         <div className="flex">
          
-
           <main className="flex-1">
             <Hero />
 
@@ -57,8 +53,6 @@ export default function Page() {
 }
 
 
-
-/* ------------------ Hero ------------------ */
 function Hero() {
   return (
 <section className="relative z-0 h-[45vh] sm:h-[50vh] md:h-[60vh] w-full">
@@ -74,8 +68,6 @@ function Hero() {
     playsInline
     className="w-full h-full object-cover scale-180 sm:scale-100"
   />
-
-  {/* Gradients */}
   <div className="absolute inset-0 bg-gradient-to-r from-black/10 via-transparent to-transparent" />
         <div className="absolute inset-0 bg-gradient-to-t from-black/100 lg:from-black/80 via-transparent to-transparent" />
 </div>
@@ -84,12 +76,10 @@ function Hero() {
 
       <div className="max-w-[1400px] mx-auto md:px-4 h-full flex items-end">
         <div className="pb-10 sm:pb-0 md:pb-5 -ml-2 md:ml-8 xl:ml-20  w-full xl:w-1/2">
-          {/* Title image or text */}
           <div className="mb-4">
             <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight ml-10">IT : WELCOME TO DERRY</h1>
           </div>
 
-          {/* meta + buttons */}
           <div className="flex items-center gap-3 sm:gap-4 mb-3">
             <span className="bg-yellow-400 text-black px-2 py-0.5 cursor-pointer rounded-md text-xs sm:text-sm font-semibold ml-10">IMDb 8.2/10</span>
             <span className="text-white/70 text-xs sm:text-sm cursor-pointer">2B+ Streams</span>
@@ -105,7 +95,7 @@ function Hero() {
   );
 }
 
-/* ------------------ Movie Row ------------------ */
+
 function MovieRows({ movies }: { movies: { id: number; title: string; poster: string }[] }) {
   const chunks = chunkArray(movies, 7); // split into rows of 7
 

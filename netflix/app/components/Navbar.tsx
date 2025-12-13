@@ -8,8 +8,8 @@ import { usePathname } from "next/navigation";
 
 export default function Navbar() {
   const [q, setQ] = useState('');
-  const rawPath = usePathname();          // may be undefined briefly
-  const pathname = rawPath ?? '/';       // safe fallback
+  const rawPath = usePathname();         
+  const pathname = rawPath ?? '/';       
 
   const isActive = (href: string) => {
     if (href === "/") return pathname === "/";

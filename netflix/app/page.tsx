@@ -16,11 +16,10 @@ function chunkArray<T>(arr: T[], size: number): T[][] {
 }
 
 
-// Small helper: sample movie data (replace URLs with your poster images in /public/movies)
-const totalMovies = 18; // total posters you have in /public/movies
+const totalMovies = 18; 
 const sampleMovies = Array.from({ length: totalMovies }).map((_, i) => ({
   id: i + 1,
-  title: `Movie ${i + 1}`,   // ADD THIS
+  title: `Movie ${i + 1}`,   
   poster: `/movies/movie${i + 1}.jpg`,
 }));
 
@@ -28,10 +27,9 @@ const sampleMovies = Array.from({ length: totalMovies }).map((_, i) => ({
 export default function Page() {
   return (
     <div className="min-h-screen bg-black text-white overflow-x-hidden">
-      {/* Top Navbar + Left Sidebar are placed in the layout of the page */}
       
 
-      <div className="pt-16"> {/* padding top to avoid navbar overlap */}
+      <div className="pt-16"> 
         <div className="flex">
          
 
@@ -56,93 +54,11 @@ export default function Page() {
   );
 }
 
-/* ------------------ Navbar ------------------ */
-// function Navbar() {
-//   const [q, setQ] = useState('');
 
-//   return (
-//     <header className="fixed inset-x-0 top-0 z-40 bg-black/60 backdrop-blur-md border-b border-white/5">
-//       <div className="max-w-[1400px] mx-auto px-4 py-3 flex items-center justify-between">
-//         <div className="flex items-center gap-6">
-//           {/* Logo (replace with your AI logo in /public/logo.png) */}
-//           <div className="w-28 h-10 relative ">
-//             <Image src="/logo1.png" alt="logo" fill className='scale-200' style={{ objectFit: 'contain' }} />
-//           </div>
-
-//           <nav className="hidden md:flex items-center gap-6 ml-10 text-20 text-white/90 cursor-pointer ">
-//            <Link href="/" className="hover:text-white transition">Home</Link>
-//            <Link href="/movies" className="hover:text-white transition">Movies</Link>
-//            <Link href="/tv" className="hover:text-white transition">TV Shows</Link>
-//            <Link href="/plans" className="hover:text-white transition">Plans</Link>
-//           </nav>
-//         </div>
-
-//         <div className="flex items-center gap-3">
-//           {/* Search */}
-//           <div className="relative hidden sm:flex items-center bg-white/8 rounded-full px-3 py-1 w-[360px] max-w-[60vw]">
-//             <FiSearch className="text-white/70 w-5 h-5 mr-2 cursor-pointer" />
-//             <input
-//               value={q}
-//               onChange={(e) => setQ(e.target.value)}
-//               placeholder="Search"
-//               className="bg-transparent outline-none placeholder:text-white/60 text-white w-full"
-//             />
-//           </div>
-
-//           {/* Login Button */}
-//           <button className="ml-2 rounded-md bg-red-600 hover:bg-red-700 px-4 py-1 text-sm font-semibold cursor-pointer">
-//             Sign In
-//           </button>
-//         </div>
-//       </div>
-//     </header>
-//   );
-// }
-
-/* ------------------ Sidebar ------------------ */
-// function Sidebar() {
-//   const icons = [
-//     { icon: <FiHome />, label: 'Home' },
-//     { icon: <FiFilm />, label: 'Movies' },
-//     { icon: <FiTv />, label: 'TV' },
-//     { icon: <FiMail />, label: 'My List' },
-//     { icon: <FiDownload />, label: 'Downloads' },
-//   ];
-
-//   return (
-//     <aside className="hidden md:flex flex-col items-center gap-6 w-20 py-6 fixed left-0 top-16 h-[calc(100vh-64px)] z-40">
-
-//   <Link href="/" className="flex flex-col items-center text-white/100 hover:text-red-600 transition cursor-pointer">
-//     <FiHome className="text-2xl" />
-//   </Link>
-
-//   <Link href="/movies" className="flex flex-col items-center text-white/100 hover:text-red-600 transition cursor-pointer">
-//     <FiFilm className="text-2xl" />
-//   </Link>
-
-//   <Link href="/tv" className="flex flex-col items-center text-white/100 hover:text-red-600 transition cursor-pointer">
-//     <FiTv className="text-2xl" />
-//   </Link>
-
-//   <Link href="/contact" className="flex flex-col items-center text-white/100 hover:text-red-600 transition cursor-pointer">
-//         <FiMail className="text-2xl" />
-//       </Link>
-
-//   <Link href="/download" className="flex flex-col items-center text-white/100 hover:text-red-600 transition cursor-pointer">
-//     <FiDownload className="text-2xl" />
-//   </Link>
-
-// </aside>
-
-//   );
-// }
-
-/* ------------------ Hero ------------------ */
 function Hero() {
   return (
     <section className="relative z-0 h-[45vh] sm:h-[50vh] md:h-[60vh] w-full overflow-hidden -mt-20 -mb-3">
       
-      {/* Background */}
       <div className="absolute inset-0 -z-10 overflow-hidden">
         <Image
           src="/thumbnail2.jpg"
@@ -157,7 +73,6 @@ function Hero() {
         <div className="absolute inset-0 bg-gradient-to-t from-black/100 via-transparent to-transparent" />
       </div>
 
-      {/* Content */}
       <div className="max-w-[1400px] mx-auto px-6 md:ml-10 lg:ml-20 h-full flex items-end">
         <div className="pb-0 md:pb-0 w-full ">
 
@@ -188,9 +103,9 @@ function Hero() {
   );
 }
 
-/* ------------------ Movie Row ------------------ */
+
 function MovieRows({ movies }: { movies: { id: number; title: string; poster: string }[] }) {
-  const chunks = chunkArray(movies, 7); // split into rows of 7
+  const chunks = chunkArray(movies, 7); 
 
   return (
     <div className="flex flex-col gap-6 -mb-10 md:-mb-10">

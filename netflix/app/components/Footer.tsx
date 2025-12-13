@@ -7,7 +7,6 @@ export default function Footer() {
     <footer className="bg-[#111] text-white/70 mt-0 border-t border-white/40">
       <div className="max-w-[1400px] mx-auto px-6 py-5 ml-10 md:py-7">
 
-        {/* Top Links */}
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 text-xs md:text-sm gap-2 md:gap-6 mb-10">
           <div className="flex flex-col gap:1 md:gap-3">
             <a className="hover:text-white cursor-pointer">FAQ</a>
@@ -37,7 +36,6 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Bottom */}
         <p className="text-white/80  text-xs md:text-sm mr-10 -mt-5 md:mt-3 hover:text-white text-center mb-10 md:-mb-2 ">Netflix Clone • Built by Karan ❤️</p>
       </div>
     </footer>

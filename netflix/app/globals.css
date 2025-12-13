@@ -3,14 +3,11 @@
   max-width: 100% !important;
 }
 
-/* temporary debugging & safety */
 * { box-sizing: border-box; }
 html, body, #__next { overflow-x: hidden !important; }
 
-/* stop oversized media */
 img, video, iframe { max-width: 100%; height: auto; display: block; }
 
-/* clamp any accidental huge fixed-width containers */
 [class*="max-w-"] { max-width: 100% !important; }
 
 
@@ -43,7 +40,6 @@ html, body {
   overflow-x: hidden;
 }
 
-/* Hide scrollbar but keep scroll functionality */
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
 }

@@ -60,12 +60,10 @@ export default function ContactPage() {
     <div className="px-6 md:px-20 pt-20 md:-mt-5 pb-20 text-white">
       <h1 className="text-4xl font-bold mb-10 text-center">Contact Us</h1>
 
-      {/* CONTACT INFO */}
-      
-      {/* CONTACT FORM */}
+
       <form
         onSubmit={submitForm}
-        className="max-w-xl mx-auto bg-white/10 backdrop-blur-lg p-8 rounded-xl border border-white/10"
+        className="max-w-x1 mx-auto bg-white/10 backdrop-blur-lg p-8 rounded-xl border w-100 sm:w-120 md:w-130 lg:w-150 border-white/10"
       >
         {success && (
           <p className="text-green-400 mb-4 text-center font-semibold">{success}</p>
