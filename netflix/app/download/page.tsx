@@ -4,7 +4,7 @@ import { FiDownloadCloud } from "react-icons/fi";
 
 export default function DownloadPage() {
   return (
-    <div className="flex flex-col items-center justify-center h-screen text-white px-6 mb-4 -mt-10">
+    <div className="flex flex-col items-center justify-center h-screen text-white px-6 mb-4 -mt-15 md:-mt-10">
       
       {/* Icon */}
       <FiDownloadCloud className="text-gray-400 text-7xl mb-6" />

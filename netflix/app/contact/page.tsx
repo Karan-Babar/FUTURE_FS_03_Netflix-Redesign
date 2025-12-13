@@ -115,7 +115,7 @@ export default function ContactPage() {
           {isSubmitting ? "Submitting..." : "Submit"}
         </button>
       </form>
-      <div className="flex flex-col md:flex-row justify-center gap-4 md:gap-10 mt-15">
+      <div className="flex flex-col md:flex-row justify-center gap-4 md:gap-10 mb-2 sm:mb-0 mt-15">
         <div className="flex items-center gap-3">
           <FiMail className="text-red-500 text-2xl" />
           <p>Email: karan.babar2004@gmail.com</p>

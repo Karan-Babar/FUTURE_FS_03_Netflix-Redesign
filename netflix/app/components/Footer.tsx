@@ -4,7 +4,7 @@ import React from "react";
 
 export default function Footer() {
   return (
-    <footer className="bg-[#111] text-white/70 -mt-0 border-t border-white/40">
+    <footer className="bg-[#111] text-white/70 mt-0 border-t border-white/40">
       <div className="max-w-[1400px] mx-auto px-6 py-5 ml-10 md:py-7">
 
         {/* Top Links */}

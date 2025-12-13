@@ -38,12 +38,12 @@ export default function Page() {
           <main className="flex-1">
             <Hero />
 
-            <section className="px-4 py-8 -mt-10 sm:mt-0">
+            <section className="px-4 py-8 -mt-9 sm:mt-0">
               <h2 className="text-1xl sm:text-2xl font-bold mb-2 sm:mb-4 md:ml-10">New this week</h2>
               <MovieRows movies={sampleMovies.slice(18, 25)} />
             </section>
 
-            <section className="px-4 py-6 md:py-8">
+            <section className="px-4 py-6 md:py-8 -mb-12 md:-mb-10">
               <h2 className="text-1xl sm:text-2xl font-bold mb-2 sm:mb-4 md:ml-10">Trending Now</h2>
               <MovieRows movies={sampleMovies.slice(25, 32)} />
             </section>
@@ -77,7 +77,7 @@ function Hero() {
 
   {/* Gradients */}
   <div className="absolute inset-0 bg-gradient-to-r from-black/10 via-transparent to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/100 via-transparent to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/100 lg:from-black/80 via-transparent to-transparent" />
 </div>
 
 

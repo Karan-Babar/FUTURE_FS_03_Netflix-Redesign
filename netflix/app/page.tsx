@@ -43,7 +43,7 @@ export default function Page() {
               <MovieRows movies={sampleMovies.slice(0, 14)} />
             </section>
 
-            <section className="px-4 py-6 md:py-8">
+            <section className="px-4 py-6 md:py-8 -mb-12 md:-mb-10">
               <h2 className="text-1xl sm:text-2xl font-bold mb-2 sm:mb-4 md:ml-10">Trending Now</h2>
               <MovieRows movies={sampleMovies.slice(4, 18)} />
             </section>
