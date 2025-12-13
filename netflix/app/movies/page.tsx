@@ -27,12 +27,10 @@ const sampleMovies = Array.from({ length: totalMovies }).map((_, i) => ({
 export default function Page() {
   return (
     <div className="min-h-screen bg-black text-white overflow-x-hidden">
-      
-
+ 
       <div className="pt-16"> 
         <div className="flex">
          
-
           <main className="flex-1">
             <Hero />
 
@@ -98,15 +96,34 @@ function Hero() {
 }
 
 
-function MovieRows({ movies }: { movies: { id: number; title: string; poster: string }[] }) {
-  const chunks = chunkArray(movies, 7); // split into rows of 7
+function MovieRows({
+  movies,
+}: {
+  movies: { id: number; title: string; poster: string }[];
+}) {
+  const chunks = chunkArray(movies, 7);
 
   return (
-    <div className="flex flex-col  gap-6 -mb-10">
+    <div className="flex flex-col gap-6 -mb-10 md:-mb-10">
       {chunks.map((row, rowIndex) => (
-        <div key={rowIndex} className="flex gap-3 md:gap-4 overflow-x-auto scrollbar-hide scroll-smooth px-0 md:ml-10">
+        <div
+          key={rowIndex}
+          className="
+            flex gap-3 md:gap-4
+            overflow-x-auto
+            scrollbar-hide
+            scroll-smooth
+            px-0 
+            md:ml-10
+            min-w-full
+          "
+        >
           {row.map((movie) => (
-            <MovieCard key={movie.id} title={movie.title} poster={movie.poster} />
+            <MovieCard
+              key={movie.id}
+              title={movie.title}
+              poster={movie.poster}
+            />
           ))}
         </div>
       ))}
@@ -115,14 +132,38 @@ function MovieRows({ movies }: { movies: { id: number; title: string; poster: st
 }
 
 
-function MovieCard({ title, poster }: { title: string; poster: string }) {
+
+function MovieCard({
+  title,
+  poster,
+}: {
+  title: string;
+  poster: string;
+}) {
   return (
-    <div className="inline-block w-30 sm:w-40 md:w-48 h-46 sm:h-60 cursor-pointer md:h-72 shrink-0 rounded-md overflow-hidden transform hover:scale-105 transition duration-300">
+    <div
+      className="
+        shrink-0
+         w-[119px] h-[184px] sm:w-40 md:w-48
+       sm:h-60 md:h-72
+        rounded-md
+        overflow-hidden
+        cursor-pointer
+        transition-transform
+        duration-300
+        hover:scale-105
+      "
+    >
       <div className="relative w-full h-full">
-        <Image src={poster} alt={title || 'Movie poster'} fill style={{ objectFit: 'cover' }} />
+        <Image
+          src={poster}
+          alt={title || "Movie poster"}
+          fill
+          sizes="(max-width: 640px) 112px, (max-width: 768px) 160px, 192px"
+          className="object-cover"
+        />
         <div className="absolute inset-0 bg-black/0 hover:bg-black/30 transition" />
       </div>
     </div>
   );
 }
-

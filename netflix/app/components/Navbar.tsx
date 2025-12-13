@@ -35,7 +35,7 @@ export default function Navbar() {
     fill
     className="
       object-contain
-      scale-140         /* default */
+      scale-200         /* default */
       sm:scale-140  sm:ml-5     /* ≥ 640px */
       md:scale-150  md:-ml-1     /* ≥ 768px */
       lg:scale-170  lg:ml-4    /* ≥ 1024px */
@@ -44,7 +44,7 @@ export default function Navbar() {
   />
 </div>
 
-        <nav className="hidden md:flex items-center gap-8 ml-10 text-sm md:text-sm md:-ml-2 md:gap-4 lg:gap-5 lg:text-base lg:ml-3 xl:text-base xl:gap-10 xl:ml-30 cursor-pointer">
+        <nav className="hidden md:flex items-center gap-8 ml-10 text-sm md:text-sm md:-ml-2 md:gap-4 lg:gap-5 lg:text-base lg:ml-10 xl:text-base xl:gap-10 xl:ml-40 cursor-pointer">
              
             <Link href="/" className={linkStyle("/")}>Home</Link>
             <Link href="/movies" className={linkStyle("/movies")}>Movies</Link>
