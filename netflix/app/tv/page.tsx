@@ -6,7 +6,6 @@ import { FiSearch, FiHome, FiFilm, FiTv, FiDownload, FiMail , FiUser } from 'rea
 import Link from "next/link";
 
 
-// Helper to split an array into chunks of given size
 function chunkArray<T>(arr: T[], size: number): T[][] {
   const chunks: T[][] = [];
   for (let i = 0; i < arr.length; i += size) {
@@ -16,11 +15,10 @@ function chunkArray<T>(arr: T[], size: number): T[][] {
 }
 
 
-// Small helper: sample movie data (replace URLs with your poster images in /public/movies)
-const totalMovies = 46; // total posters you have in /public/movies
+const totalMovies = 46; 
 const sampleMovies = Array.from({ length: totalMovies }).map((_, i) => ({
   id: i + 1,
-  title: `Movie ${i + 1}`,   // ADD THIS
+  title: `Movie ${i + 1}`,   
   poster: `/movies/movie${i + 1}.jpg`,
 }));
 
@@ -61,7 +59,7 @@ function Hero() {
   return (
 <section className="relative z-0 h-[45vh] sm:h-[50vh] md:h-[60vh] w-full">
       {/* Background image */}
-       <div className="absolute inset-0 -z-10 overflow-hidden -mt-9 sm:-mt-14 lg:-mt-17 xl:-mt-21">
+       <div className="absolute inset-0 -z-10 overflow-hidden -mt-20 sm:-mt-14 lg:-mt-8 xl:-mt-8">
      <video
           src="/trailer2.mp4"
           autoPlay
@@ -148,7 +146,7 @@ function MovieCard({
     <div
       className="
         shrink-0
-         w-[119px] h-[184px] sm:w-40 md:w-48
+         w-28 h-44 sm:w-40 md:w-48
        sm:h-60 md:h-72
         rounded-md
         overflow-hidden

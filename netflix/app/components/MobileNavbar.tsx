@@ -13,12 +13,12 @@ export default function MobileNavbar() {
   };
 
   const iconStyle = (href: string) =>
-    `flex flex-col items-center text-xl transition 
+    `flex flex-col items-center text-2xl transition 
      ${isActive(href) ? "text-red-600" : "text-white/90"}
      hover:text-red-600`;
 
   return (
-    <nav className="md:hidden fixed bottom-0 left-0 right-0 bg-black/90 border-t border-white/10 flex justify-between px-8 py-3 backdrop-blur-lg z-50">
+    <nav className="md:hidden fixed bottom-0 left-0 right-0 bg-black/90 border-t border-white/20 flex justify-between  px-8 py-4 backdrop-blur-lg z-50">
 
       <Link href="/" className={iconStyle("/")}>
         <FiHome />

@@ -144,7 +144,7 @@ function MovieCard({
     <div
       className="
         shrink-0
-         w-[119px] h-[184px] sm:w-40 md:w-48
+         w-28 h-44 sm:w-40 md:w-48
        sm:h-60 md:h-72
         rounded-md
         overflow-hidden

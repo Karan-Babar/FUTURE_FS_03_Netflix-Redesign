@@ -24,22 +24,22 @@ export default function Navbar() {
      ${isActive(href) ? " after:content-[''] after:absolute after:transition-all after:duration-300 after:left-0 after:-bottom-[2px] after:h-[3px] after:bg-red-600 after:w-full" : "after:w-0 hover:after:w-full"}`;
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50  bg-black/60 backdrop-blur-md border-b border-white/5">
-      <div className="max-w-[1400px] mx-auto px-4 py-1 sm:py-2 md:py-3 flex items-center justify-between">
+    <header className="fixed inset-x-0 z-50  bg-black/60 backdrop-blur-md border-b border-white/5">
+      <div className="max-w-[1400px] h-12 sm:h-14 md:h-16 mx-auto px-4 py-0 sm:py-2 md:py-3 flex items-center justify-between">
         
         <div className="flex items-center gap-6">
-          <div className="w-28 h-10 relative">
+          <div className="w-28 h-16  relative">
   <Image
     src="/logo1.png"
     alt="logo"
     fill
     className="
       object-contain
-      scale-200         /* default */
+      scale-140    ml-3     /* default */
       sm:scale-140  sm:ml-5     /* ≥ 640px */
-      md:scale-150  md:-ml-1     /* ≥ 768px */
-      lg:scale-170  lg:ml-4    /* ≥ 1024px */
-      xl:scale-200  xl:ml-16     /* ≥ 1280px */
+      md:scale-110  md:-ml-1     /* ≥ 768px */
+      lg:scale-160  lg:ml-4    /* ≥ 1024px */
+      xl:scale-150  xl:ml-20     /* ≥ 1280px */
     "
   />
 </div>
@@ -56,7 +56,7 @@ export default function Navbar() {
         </div>
 
         <div className="flex items-center gap-3">
-          <div className=" flex items-center bg-white/15 rounded-full px-2 py-1 w-[130px] h-5 -ml-5 -mr-3 text-xs                 /* mobile small */
+          <div className=" flex items-center bg-white/15 rounded-full px-2 py-3 w-[130px] h-5 -ml-5 -mr-3 text-xs                 /* mobile small */
               sm:w-[220px] sm:text-sm sm:h-7           /* ≥640px */
               md:w-[260px] md:text-md md:h-8               /* ≥768px */
               lg:w-[360px] lg:text-md lg:mr-5     max-w-[70vw]">
@@ -72,7 +72,7 @@ export default function Navbar() {
           <button className="ml-2 rounded-md bg-red-600 hover:bg-red-700 px-2 py-1 mr-2 text-xs  /* smaller text for mobile */
                     sm:px-4 sm:py-1 sm:text-sm    /* ≥640px (tablets) */
                     md:px-5 md:py-1.5 md:text-sm  /* ≥768px */
-                    lg:px-6 lg:py-2 lg:text-base lg:mr-3 xl:mr-15  /* ≥1024px desktops */ font-semibold cursor-pointer">
+                    lg:px-6 lg:py-2 lg:text-base lg:mr-3 xl:mr-20  /* ≥1024px desktops */ font-semibold cursor-pointer">
             Sign In
           </button>
         </div>

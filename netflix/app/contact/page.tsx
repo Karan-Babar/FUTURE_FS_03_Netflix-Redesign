@@ -57,13 +57,13 @@ export default function ContactPage() {
   };
 
   return (
-    <div className="px-6 md:px-20 pt-20 md:-mt-5 pb-20 text-white">
-      <h1 className="text-4xl font-bold mb-10 text-center">Contact Us</h1>
+    <div className="px-6 md:px-20 pt-14 md:mt-4 pb-20 text-white">
+      <h1 className="text-3xl md:text-4xl font-bold mb-8 md:mb-10 text-center">Contact Us</h1>
 
 
       <form
         onSubmit={submitForm}
-        className="max-w-x1 mx-auto bg-white/10 backdrop-blur-lg p-8 rounded-xl border w-100 sm:w-120 md:w-130 lg:w-150 border-white/10"
+        className="max-w-x1 mx-auto bg-white/10 backdrop-blur-lg p-8 rounded-xl border w-[400px] sm:w-[420px] md:w-[500px] lg:w-[550px] border-white/10"
       >
         {success && (
           <p className="text-green-400 mb-4 text-center font-semibold">{success}</p>
@@ -113,7 +113,7 @@ export default function ContactPage() {
           {isSubmitting ? "Submitting..." : "Submit"}
         </button>
       </form>
-      <div className="flex flex-col md:flex-row justify-center gap-4 md:gap-10 mb-2 sm:mb-0 mt-15">
+      <div className="flex flex-col md:flex-row justify-center gap-4 md:gap-10 mb-2 sm:mb-0 mt-8 xl:mt-10">
         <div className="flex items-center gap-3">
           <FiMail className="text-red-500 text-2xl" />
           <p>Email: karan.babar2004@gmail.com</p>
