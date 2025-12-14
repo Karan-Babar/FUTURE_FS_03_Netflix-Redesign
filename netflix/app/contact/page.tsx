@@ -34,16 +34,12 @@ export default function ContactPage() {
 
       console.log("✅ Document written with ID:", docRef.id);
       
-      // Show alert
       alert("Form submitted successfully!");
       
-      // Set success message
       setSuccess("Thank you! Your message has been sent successfully.");
 
-      // Reset form
       setForm({ name: "", email: "", message: "" });
       
-      // Clear success message after 5 seconds
       setTimeout(() => setSuccess(""), 5000);
       
     } catch (err) {

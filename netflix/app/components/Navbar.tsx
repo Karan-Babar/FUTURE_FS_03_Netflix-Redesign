@@ -16,7 +16,6 @@ export default function Navbar() {
     return pathname.startsWith(href);
   };
 
-  // NOTE: after:content-[''] is REQUIRED so the pseudo-element actually exists.
   const linkStyle = (href: string) =>
     `relative pb-1 transition text-white
      hover:text-red-600
@@ -56,7 +55,7 @@ export default function Navbar() {
         </div>
 
         <div className="flex items-center gap-3">
-          <div className=" flex items-center bg-white/15 rounded-full px-2 py-3 w-[130px] h-5 -ml-5 -mr-3 text-xs                 /* mobile small */
+          <div className=" flex items-center bg-white/15 rounded-full px-2 py-3 w-[130px] h-5 -ml-5 -mr-3 text-xs    
               sm:w-[220px] sm:text-sm sm:h-7           /* ≥640px */
               md:w-[260px] md:text-md md:h-8               /* ≥768px */
               lg:w-[360px] lg:text-md lg:mr-5     max-w-[70vw]">
