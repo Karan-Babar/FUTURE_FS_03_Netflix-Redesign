@@ -3,18 +3,28 @@
 
 For this task, I built a fully responsive Netflix Redesign web application, focusing on modern UI, smooth interactions, and cross-device responsiveness.
 
+
 🔧 Tech Stack Used:
+
  ✨ Frontend: Next.js, React.js, Tailwind CSS
+ 
  ✨ UI & Icons: React Icons
+ 
  ✨ Backend Services: Firebase 
+ 
  ✨ Deployment: Vercel
 
 
 📌 Key Features:
+
  ✔ Fully responsive design (mobile, tablet & desktop)
+ 
  ✔ Netflix-style UI with hero sections, movie rows & smooth scrolling
+ 
  ✔ Horizontal scroll movie rows with hover effects
+ 
  ✔ Video & image-based hero sections
+ 
  ✔ Optimized layout using Next.js Image & performance features
 
 
